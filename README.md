@@ -1,73 +1,104 @@
-# Welcome to your Lovable project
+# 🩺 VoiceTriage AI
 
-## Project info
+> Real-time, AI-powered voice health triage using OpenAI Whisper + GPT-4 + OmniDimension
 
-**URL**: https://lovable.dev/projects/2b8e8562-bf89-4b69-b7f8-6fd6e2a87f9b
+**VoiceTriage AI** is an intelligent web application that lets users speak their symptoms and receive instant, privacy-respecting health advice using state-of-the-art voice-to-AI technology.
 
-## How can I edit this code?
+Built for **Vibe-a-thon 2.0**, this project blends cutting-edge voice interfaces, browser-friendly UX, and medical-grade AI suggestions — no typing required.
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## 🎯 Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/2b8e8562-bf89-4b69-b7f8-6fd6e2a87f9b) and start prompting.
+- 🎙️ Start/Stop Voice Listening with animation & accessibility
+- 🔊 Audio transcribed using **OpenAI Whisper**
+- 🧠 Transcripts analyzed via **GPT-4** or OmniDimension AI
+- 🗣️ Responses delivered instantly in the UI
+- 📞 Optional “Emergency AI Call” trigger via **Supabase Edge Function**
+- 🧩 OmniDimension Web Widget integration for live voice chats
+- 🛡️ Fully private – no health data stored permanently
+- 🌐 Built with **React + Vite + TailwindCSS + Supabase**
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 🧪 Live Demo
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+[🔗 Try it now (Lovable Hosted)](https://preview--voice-ai-triage-flow.lovable.app/)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## 🖼️ Screenshots
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+![VoiceTriage AI](https://your-screenshot-url-if-any.png)
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## ⚙️ Tech Stack
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+| Layer | Technology |
+|-------|------------|
+| UI & Animations | React, TailwindCSS, Vite |
+| Voice UI | MediaRecorder, OmniDimension Widget |
+| Transcription | OpenAI Whisper API |
+| AI Reasoning | GPT-4 / OmniDimension AI |
+| Backend | Next.js API / Supabase Edge Functions |
+| Deployment | Lovable.app / GitHub Pages / Vercel |
+
+---
+
+## 🧩 OmniDimension Integration
+
+We use:
+- Omni’s Web Widget (`web_widget.js`) for instant in-browser voice interactions
+- Agent ID: `2585` (custom trained)
+- Omni Call API (configured for production rollout post-hackathon)
+
+📌 Note: **Actual AI calls require a purchased Omni phone number ($2/mo)**. In demo mode, AI triage call is simulated.
+
+---
+
+## 📁 Project Structure
+
+```bash
+📦 voice-triage-ai
+├── public/                    # Static assets
+├── src/
+│   ├── components/            # UI elements
+│   ├── pages/                 # Main route pages
+│   ├── api/voice.ts           # Audio to Whisper + GPT backend
+│   ├── integrations/          # Supabase config
+│   └── App.tsx                # Routing and providers
+├── supabase/
+│   └── functions/dispatch-call.ts # Optional call trigger
+├── .env                       # API keys (not committed)
+└── README.md
 ```
 
-**Edit a file directly in GitHub**
+# Clone the repo
+git clone https://github.com/Tanny28/voice-triage-ai.git
+cd voice-triage-ai
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+# Install dependencies
+npm install
 
-**Use GitHub Codespaces**
+# Create .env file
+cp .env.example .env
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Add required keys
+# VITE_OMNIDIM_AGENT_ID=2585
+# OPENAI_API_KEY=sk-...
+# OMNIDIM_API_KEY=...
+# TEST_PHONE_NUMBER=+91XXXXXXXXXX
 
-## What technologies are used for this project?
+# Start dev server
+npm run dev
+OPENAI_API_KEY=your-openai-key
+OMNIDIM_API_KEY=your-omni-key
+VITE_OMNIDIM_AGENT_ID=2585
+TEST_PHONE_NUMBER=+91xxxxxxxxxx
 
-This project is built with:
+Built During
+🎧 VIBE-A-THON 2.0
+Powered by Geek Room × OmniDimension
+June 2025 | Theme: "Build with Voice AI"
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/2b8e8562-bf89-4b69-b7f8-6fd6e2a87f9b) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
