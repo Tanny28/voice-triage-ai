@@ -23,13 +23,10 @@ Built for **Vibe-a-thon 2.0**, this project blends cutting-edge voice interfaces
 
 ## 🧪 Live Demo
 
-[🔗 Try it now (Lovable Hosted)](https://preview--voice-ai-triage-flow.lovable.app/)
+[🔗 Try it now](https://voice-triage-cw0ofykub-tanny28s-projects.vercel.app/)
 
 ---
 
-## 🖼️ Screenshots
-
-![VoiceTriage AI](https://your-screenshot-url-if-any.png)
 
 ---
 
@@ -85,10 +82,10 @@ npm install
 cp .env.example .env
 
 # Add required keys
-# VITE_OMNIDIM_AGENT_ID=2585
-# OPENAI_API_KEY=sk-...
-# OMNIDIM_API_KEY=...
-# TEST_PHONE_NUMBER=+91XXXXXXXXXX
+VITE_OMNIDIM_AGENT_ID=2585
+OPENAI_API_KEY=sk-...
+OMNIDIM_API_KEY=...
+TEST_PHONE_NUMBER=+91XXXXXXXXXX
 
 # Start dev server
 npm run dev
